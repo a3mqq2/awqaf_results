@@ -20,9 +20,5 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('123123123'),
             'is_active' => true,
         ]);
-
-        $this->call([
-            StudentResultsSeeder::class,
-        ]);
     }
 }
