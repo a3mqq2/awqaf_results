@@ -15,6 +15,11 @@ class StudentResultsImport implements ToModel, WithHeadingRow
             return null;
         }
 
+        // Convert national_id to string to handle large numbers
+        $nationalId = is_numeric($row['alrkm_alotny'])
+            ? number_format($row['alrkm_alotny'], 0, '', '')
+            : (string) $row['alrkm_alotny'];
+
         // Handle numeric scores - some may be text like "راسبة" (failed)
         $methodologyScore = is_numeric($row['almnhg_alaalmy']) ? $row['almnhg_alaalmy'] : 0;
         $oralScore = is_numeric($row['drg_alshfhy']) ? $row['drg_alshfhy'] : 0;
@@ -38,7 +43,7 @@ class StudentResultsImport implements ToModel, WithHeadingRow
 
         return new StudentResult([
             'student_name' => $row['asm_altalb_alrbaaay'],
-            'national_id' => $row['alrkm_alotny'],
+            'national_id' => $nationalId,
             'narration' => $row['alroay'],
             'drawing' => $row['alrsm'],
             'methodology_score' => $methodologyScore,
