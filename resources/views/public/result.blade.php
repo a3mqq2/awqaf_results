@@ -194,6 +194,28 @@
             bottom: 30px;
             left: 30px;
             z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .float-button-text {
+            background: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(60, 94, 127, 0.2);
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 14px;
+            white-space: nowrap;
+            opacity: 0;
+            animation: fadeInText 1s ease-in-out 1s forwards;
+        }
+
+        @keyframes fadeInText {
+            to {
+                opacity: 1;
+            }
         }
 
         .float-button {
@@ -211,6 +233,7 @@
             transition: all 0.3s ease;
             border: none;
             animation: pulse 2s infinite;
+            flex-shrink: 0;
         }
 
         .float-button:hover {
@@ -248,6 +271,11 @@
                 width: 60px;
                 height: 60px;
                 font-size: 24px;
+            }
+
+            .float-button-text {
+                font-size: 12px;
+                padding: 10px 15px;
             }
         }
     </style>
@@ -361,6 +389,9 @@
 
     <!-- Float Button -->
     <div class="float-button-container">
+        <div class="float-button-text">
+            إن كانت لديك استفسار أو إشكالية اضغط هنا لإرسال رسالة
+        </div>
         <button class="float-button" data-bs-toggle="modal" data-bs-target="#contactModal" title="تواصل مع الإدارة">
             <i class="ti ti-message-circle"></i>
         </button>
