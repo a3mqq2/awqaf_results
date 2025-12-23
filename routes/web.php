@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PublicResultController;
 use App\Http\Controllers\StudentResultController;
@@ -9,6 +10,7 @@ use App\Http\Controllers\StudentResultController;
 Route::get('/', [PublicResultController::class, 'index'])->name('home');
 Route::post('/search', [PublicResultController::class, 'search'])->name('public.search');
 Route::get('/print/{id}', [PublicResultController::class, 'print'])->name('public.print');
+Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
 
 // Admin Routes - لوحة التحكم
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {

@@ -2,6 +2,23 @@
 
 @section('title', 'إدارة النتائج')
 
+@push('styles')
+<style>
+    .table tbody tr.pass-row {
+        background-color: #d4edda !important;
+    }
+    .table tbody tr.pass-row:hover {
+        background-color: #c3e6cb !important;
+    }
+    .table tbody tr.fail-row {
+        background-color: #f8d7da !important;
+    }
+    .table tbody tr.fail-row:hover {
+        background-color: #f5c6cb !important;
+    }
+</style>
+@endpush
+
 @section('content')
 
         <!-- فلتر متقدم -->
@@ -20,9 +37,9 @@
                                    value="{{ request('student_name') }}" placeholder="ابحث باسم الطالب">
                         </div>
                         <div class="col-md-3">
-                            <label class="form-label">الرقم الوطني</label>
+                            <label class="form-label">الرقم الوطني او الرقم الاداري</label>
                             <input type="text" name="national_id" class="form-control"
-                                   value="{{ request('national_id') }}" placeholder="ابحث بالرقم الوطني">
+                                   value="{{ request('national_id') }}" placeholder="ابحث بالرقم الوطني او الرقم الاداري">
                         </div>
                         <div class="col-md-3">
                             <label class="form-label">التقدير</label>
@@ -112,7 +129,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>اسم الطالب</th>
-                                <th>الرقم الوطني</th>
+                                <th>الرقم الوطني او الرقم الاداري</th>
                                 <th>الرواية</th>
                                 <th>الرسم</th>
                                 <th>المنهج العلمي</th>
@@ -127,7 +144,7 @@
                         </thead>
                         <tbody>
                             @forelse($results as $result)
-                            <tr>
+                            <tr class="{{ $result->grade === 'راسب' ? 'fail-row' : 'pass-row' }}">
                                 <td>{{ $loop->iteration + ($results->currentPage() - 1) * $results->perPage() }}</td>
                                 <td><strong>{{ $result->student_name }}</strong></td>
                                 <td>{{ $result->national_id }}</td>
@@ -138,7 +155,11 @@
                                 <td>{{ number_format($result->written_score, 2) }}</td>
                                 <td><strong>{{ number_format($result->total_score, 2) }}</strong></td>
                                 <td>{{ number_format($result->percentage, 2) }}%</td>
-                                <td><span class="badge bg-primary">{{ $result->grade }}</span></td>
+                                <td>
+                                    <span class="badge {{ $result->grade === 'راسب' ? 'bg-danger' : 'bg-success' }}">
+                                        {{ $result->grade }}
+                                    </span>
+                                </td>
                                 <td>{{ $result->certificate_location }}</td>
                                 <td>
                                     <div class="btn-group" role="group">
