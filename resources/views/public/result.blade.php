@@ -315,9 +315,6 @@
                     <div style="background: #f8d7da; border: 2px solid #dc3545; border-radius: 15px; padding: 30px;">
                         <i class="ti ti-alert-circle" style="font-size: 48px; color: #dc3545;"></i>
                         <h3 style="color: #dc3545; font-weight: 800; margin-top: 20px;">راسب</h3>
-                        <p style="color: #721c24; font-size: 18px; font-weight: 600; margin-top: 15px;">
-                            النسبة المئوية: {{ number_format($result->percentage, 2) }}%
-                        </p>
                     </div>
                 </div>
             @else
