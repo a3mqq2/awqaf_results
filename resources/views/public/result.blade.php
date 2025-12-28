@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الاستعلام عن نتيجة امتحان اجازة حفظ القران الكريم كاملاََ لعام 1447هـ - 2025م</title>
+    <title>الاستعلام عن نتيجة امتحان إجازة حفظ القرآن الكريم كاملًا لعام 1447هـ - 2025م</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
@@ -188,7 +188,6 @@
             }
         }
 
-        /* Float Button Styles */
         .float-button-container {
             position: fixed;
             bottom: 30px;
@@ -286,13 +285,13 @@
             <div class="logo-placeholder mb-3">
                 <img src="{{ asset('logo-primary.png') }}" alt="شعار الوزارة" style="max-width: 100px;">
             </div>
-            <h1 class="main-title">الاستعلام عن نتيجة امتحان اجازة حفظ القران الكريم كاملاََ لعام 1447هـ - 2025م</h1>
+            <h1 class="main-title">الاستعلام عن نتيجة امتحان إجازة حفظ القرآن الكريم كاملًا لعام 1447هـ - 2025م</h1>
         </div>
 
         <div class="result-card">
             <div class="student-info">
                 <div class="student-name">{{ $result->student_name }}</div>
-                <div class="student-id">الرقم الوطني او الرقم الاداري: {{ $result->national_id }}</div>
+                <div class="student-id">الرقم الوطني أو الرقم الإداري: {{ $result->national_id }}</div>
             </div>
 
             <div class="scores-section">
@@ -310,7 +309,6 @@
             </div>
 
             @if($result->grade === 'راسب')
-                <!-- عرض للطالب الراسب -->
                 <div class="text-center" style="padding: 40px 20px;">
                     <div style="background: #f8d7da; border: 2px solid #dc3545; border-radius: 15px; padding: 30px;">
                         <i class="ti ti-alert-circle" style="font-size: 48px; color: #dc3545;"></i>
@@ -318,7 +316,6 @@
                     </div>
                 </div>
             @else
-                <!-- عرض للطالب الناجح -->
                 <div class="scores-section">
                     <h4 class="mb-3" style="color: var(--primary-color); font-weight: 700;">نتائج الامتحانات</h4>
 
@@ -365,7 +362,7 @@
                             <i class="ti ti-info-circle me-2"></i>ملاحظة:
                         </p>
                         <p style="margin: 10px 0 0 0; color: #084298; font-size: 14px; line-height: 1.8;">
-                            سيتم الإعلان عن موعد استلام الشهادة لاحقاً عبر الصفحة الرسمية لوزارة الأوقاف والشؤون الإسلامية
+                            سيتم الإعلان عن موعد استلام الشهادة لاحقًا عبر الصفحة الرسمية لوزارة الأوقاف والشؤون الإسلامية
                         </p>
                         <a href="https://www.facebook.com/Owqaf.libya/?locale=ar_AR" target="_blank"
                            style="display: inline-block; margin-top: 10px; color: #0d6efd; text-decoration: none; font-weight: 600;">
@@ -384,7 +381,6 @@
         </div>
     </div>
 
-    <!-- Float Button -->
     <div class="float-button-container">
         <div class="float-button-text">
             إن كانت لديك استفسار أو إشكالية اضغط هنا لإرسال رسالة
@@ -394,7 +390,6 @@
         </button>
     </div>
 
-    <!-- Contact Modal -->
     <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content" style="border-radius: 16px;">
@@ -428,12 +423,7 @@
                                 <i class="ti ti-user me-1"></i>
                                 الاسم الكامل
                             </label>
-                            <input type="text"
-                                   class="form-control"
-                                   id="contact_name"
-                                   name="name"
-                                   placeholder="أدخل اسمك الكامل"
-                                   required>
+                            <input type="text" class="form-control" id="contact_name" name="name" placeholder="أدخل اسمك الكامل" required>
                         </div>
 
                         <div class="mb-3">
@@ -441,12 +431,7 @@
                                 <i class="ti ti-phone me-1"></i>
                                 رقم الهاتف
                             </label>
-                            <input type="tel"
-                                   class="form-control"
-                                   id="contact_phone"
-                                   name="phone"
-                                   placeholder="أدخل رقم الهاتف"
-                                   required>
+                            <input type="tel" class="form-control" id="contact_phone" name="phone" placeholder="أدخل رقم الهاتف" required>
                         </div>
 
                         <div class="mb-3">
@@ -454,24 +439,14 @@
                                 <i class="ti ti-map-pin me-1"></i>
                                 المدينة
                             </label>
-                            <input type="text"
-                                   class="form-control"
-                                   id="contact_city"
-                                   name="city"
-                                   placeholder="أدخل اسم المدينة"
-                                   required>
+                            <input type="text" class="form-control" id="contact_city" name="city" placeholder="أدخل اسم المدينة" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="contact_national_id" class="form-label" style="font-weight: 600;">
                                 الرقم الوطني
                             </label>
-                            <input type="text"
-                                   class="form-control"
-                                   id="contact_national_id"
-                                   name="national_id"
-                                   placeholder="أدخل الرقم الوطني"
-                                   required>
+                            <input type="text" class="form-control" id="contact_national_id" name="national_id" placeholder="أدخل الرقم الوطني" required>
                         </div>
 
                         <div class="mb-3">
@@ -479,13 +454,7 @@
                                 <i class="ti ti-message me-1"></i>
                                 الرسالة
                             </label>
-                            <textarea class="form-control"
-                                      id="contact_message"
-                                      name="message"
-                                      rows="4"
-                                      placeholder="اكتب رسالتك هنا..."
-                                      required
-                                      style="resize: vertical; min-height: 120px;"></textarea>
+                            <textarea class="form-control" id="contact_message" name="message" rows="4" placeholder="اكتب رسالتك هنا..." required style="resize: vertical; min-height: 120px;"></textarea>
                         </div>
 
                         <input type="hidden" name="email_to" value="support@waqsa.ly">

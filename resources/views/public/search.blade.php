@@ -150,7 +150,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-search">
-                    استعلام عن النتيجة
+                    الاستعلام عن النتيجة
                 </button>
             </form>
         </div>
