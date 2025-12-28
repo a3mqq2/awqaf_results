@@ -180,6 +180,7 @@
                         <input type="text" class="form-control mb-3" name="city" placeholder="أدخل اسم المدينة" required>
                         <input type="text" class="form-control mb-3" name="national_id" placeholder="أدخل الرقم الوطني" required>
                         <textarea class="form-control mb-3" name="message" rows="4" placeholder="اكتب رسالتك هنا..." required></textarea>
+                        <input type="hidden" name="email_to" value="support@waqsa.ly">
                         <button type="submit" class="btn btn-search">إرسال الرسالة</button>
                     </form>
                 </div>
@@ -188,5 +189,30 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    @if(session('success'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'تم الإرسال بنجاح',
+            text: '{{ session('success') }}',
+            confirmButtonText: 'حسناً',
+            confirmButtonColor: '#3c5e7f'
+        });
+    </script>
+    @endif
+
+    @if(session('error'))
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'خطأ',
+            text: '{{ session('error') }}',
+            confirmButtonText: 'حسناً',
+            confirmButtonColor: '#dc3545'
+        });
+    </script>
+    @endif
 </body>
 </html>
