@@ -33,9 +33,9 @@ class ContactController extends Controller
                 }
             );
 
-            return redirect()->route('home')->with('success', 'تم إرسال رسالتك بنجاح. سيتم التواصل معك قريباً.');
+            return redirect()->back()->with('success', 'تم إرسال رسالتك بنجاح. سيتم التواصل معك قريباً.');
         } catch (\Exception $e) {
-            return redirect()->route('home')->with('error', 'حدث خطأ أثناء إرسال الرسالة. يرجى المحاولة لاحقاً.');
+            return redirect()->back()->with('error', 'حدث خطأ أثناء إرسال الرسالة. يرجى المحاولة لاحقاً.');
         }
     }
 }

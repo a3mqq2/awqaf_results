@@ -472,5 +472,30 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    @if(session('success'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'تم الإرسال بنجاح',
+            text: '{{ session('success') }}',
+            confirmButtonText: 'حسناً',
+            confirmButtonColor: '#3c5e7f'
+        });
+    </script>
+    @endif
+
+    @if(session('error'))
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'خطأ',
+            text: '{{ session('error') }}',
+            confirmButtonText: 'حسناً',
+            confirmButtonColor: '#dc3545'
+        });
+    </script>
+    @endif
 </body>
 </html>
