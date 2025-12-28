@@ -28,7 +28,8 @@ class ContactController extends Controller
                 "الرسالة:\n{$validated['message']}",
                 function ($message) use ($validated) {
                     $message->to($validated['email_to'])
-                        ->subject('رسالة جديدة من موقع النتائج');
+                        ->subject('رسالة جديدة من موقع النتائج - ' . $validated['name'])
+                        ->replyTo($validated['phone'] . '@noreply.waqsa.ly', $validated['name']);
                 }
             );
 
