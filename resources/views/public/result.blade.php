@@ -320,17 +320,17 @@
                     <h4 class="mb-3" style="color: var(--primary-color); font-weight: 700;">نتائج الامتحانات</h4>
 
                     <div class="score-item">
-                        <span class="score-label"><i class="ti ti-school me-2"></i>امتحان المنهج العلمي (من 40)</span>
+                        <span class="score-label"><i class="ti ti-school me-2"></i>الامتحان المنهج العلمي (من 40)</span>
                         <span class="score-value">{{ number_format($result->methodology_score, 2) }}</span>
                     </div>
 
                     <div class="score-item">
-                        <span class="score-label"><i class="ti ti-microphone me-2"></i>امتحان الشفهي (من 100)</span>
+                        <span class="score-label"><i class="ti ti-microphone me-2"></i>الامتحان الشفهي (من 100)</span>
                         <span class="score-value">{{ number_format($result->oral_score, 2) }}</span>
                     </div>
 
                     <div class="score-item">
-                        <span class="score-label"><i class="ti ti-file-text me-2"></i>امتحان التحريري (من 140)</span>
+                        <span class="score-label"><i class="ti ti-file-text me-2"></i>الامتحان التحريري (من 140)</span>
                         <span class="score-value">{{ number_format($result->written_score, 2) }}</span>
                     </div>
                 </div>
